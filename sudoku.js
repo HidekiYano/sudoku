@@ -1,27 +1,3 @@
-var n = 3
-var zeros = 81
-
-var numeros = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0],
-               [0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-var colunas = [[numeros[0][0], numeros[1][0], numeros[2][0], numeros[3][0], numeros[4][0], numeros[5][0], numeros[6][0], numeros[7][0], numeros[8][0]],
-               [numeros[0][1], numeros[1][1], numeros[2][1], numeros[3][1], numeros[4][1], numeros[5][1], numeros[6][1], numeros[7][1], numeros[8][1]],
-               [numeros[0][2], numeros[1][2], numeros[2][2], numeros[3][2], numeros[4][2], numeros[5][2], numeros[6][2], numeros[7][2], numeros[8][2]],
-               [numeros[0][3], numeros[1][3], numeros[2][3], numeros[3][3], numeros[4][3], numeros[5][3], numeros[6][3], numeros[7][3], numeros[8][3]],
-               [numeros[0][4], numeros[1][4], numeros[2][4], numeros[3][4], numeros[4][4], numeros[5][4], numeros[6][4], numeros[7][4], numeros[8][4]],
-               [numeros[0][5], numeros[1][5], numeros[2][5], numeros[3][5], numeros[4][5], numeros[5][5], numeros[6][5], numeros[7][5], numeros[8][5]],
-               [numeros[0][6], numeros[1][6], numeros[2][6], numeros[3][6], numeros[4][6], numeros[5][6], numeros[6][6], numeros[7][6], numeros[8][6]],
-               [numeros[0][7], numeros[1][7], numeros[2][7], numeros[3][7], numeros[4][7], numeros[5][7], numeros[6][7], numeros[7][7], numeros[8][7]],
-               [numeros[0][8], numeros[1][8], numeros[2][8], numeros[3][8], numeros[4][8], numeros[5][8], numeros[6][8], numeros[7][8], numeros[8][8]]
-              ]
-
 function quadrante1(numero) {
     var quadrante = [numero[0][0], numero[0][1], numero[0][2], numero[1][0], numero[1][1], numero[1][2], numero[2][0], numero[2][1], numero[2][2]]
     var repeticao = 0
@@ -448,11 +424,38 @@ function contadorZeros(numeros) {
     return qtdZeros
 }
 
-while(zeros > 42) {
-    for(let j = 0; j < n * n; j++) {
-        for(let i = 0; i < n * n; i++) {
-            var rng = Math.floor(Math.random() * 10) + 1
-            if(rng > 7) {
+function criarJogo() {
+
+    var n = 3
+    var zeros = 81
+
+    var numeros = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+    var colunas = [[numeros[0][0], numeros[1][0], numeros[2][0], numeros[3][0], numeros[4][0], numeros[5][0], numeros[6][0], numeros[7][0], numeros[8][0]],
+                [numeros[0][1], numeros[1][1], numeros[2][1], numeros[3][1], numeros[4][1], numeros[5][1], numeros[6][1], numeros[7][1], numeros[8][1]],
+                [numeros[0][2], numeros[1][2], numeros[2][2], numeros[3][2], numeros[4][2], numeros[5][2], numeros[6][2], numeros[7][2], numeros[8][2]],
+                [numeros[0][3], numeros[1][3], numeros[2][3], numeros[3][3], numeros[4][3], numeros[5][3], numeros[6][3], numeros[7][3], numeros[8][3]],
+                [numeros[0][4], numeros[1][4], numeros[2][4], numeros[3][4], numeros[4][4], numeros[5][4], numeros[6][4], numeros[7][4], numeros[8][4]],
+                [numeros[0][5], numeros[1][5], numeros[2][5], numeros[3][5], numeros[4][5], numeros[5][5], numeros[6][5], numeros[7][5], numeros[8][5]],
+                [numeros[0][6], numeros[1][6], numeros[2][6], numeros[3][6], numeros[4][6], numeros[5][6], numeros[6][6], numeros[7][6], numeros[8][6]],
+                [numeros[0][7], numeros[1][7], numeros[2][7], numeros[3][7], numeros[4][7], numeros[5][7], numeros[6][7], numeros[7][7], numeros[8][7]],
+                [numeros[0][8], numeros[1][8], numeros[2][8], numeros[3][8], numeros[4][8], numeros[5][8], numeros[6][8], numeros[7][8], numeros[8][8]]
+                ]
+
+    let repeticao = 0
+
+    while(zeros > 0) {
+        repeticao++
+        for(let j = 0; j < n * n; j++) {
+            for(let i = 0; i < n * n; i++) {
                 var numeroAleatorio = Math.floor(Math.random() * 9) + 1
                 if(!numeros[j].includes(numeroAleatorio) && !colunas[i].includes(numeroAleatorio)) {
                     numeros[j][i] = numeroAleatorio
@@ -460,15 +463,102 @@ while(zeros > 42) {
                     if(quadrante1(numeros) == true && quadrante2(numeros) == true && quadrante3(numeros) == true && quadrante4(numeros) == true && quadrante5(numeros) == true && quadrante6(numeros) == true && quadrante7(numeros) == true && quadrante8(numeros) == true && quadrante9(numeros) == true) {
                         zeros = contadorZeros(numeros)
                         contador = 81 - zeros
+                        if(zeros == 0) {
+                            for(let i = 0; i < 9; i++) {
+                                $('#jogo-sudoku').append(`<div class="linha-${i + 1}">`)
+                                for(let j = 0; j < 9; j++) {
+                                    $(`.linha-${i + 1}`).append(`<div class="bloco" id="bloco-l-${i + 1}-c-${j + 1}">`)
+                                    $(`#bloco-l-${i + 1}-c-${j + 1}`).html(numeros[i][j])
+                                    $(`#bloco-l-${i + 1}-c-${j + 1}`).attr('valor', numeros[i][j])
+                                    if(numeros[i][j] == 0) {
+                                        $(`#bloco-l-${i + 1}-c-${j + 1}`).html('')
+                                    } 
+                                }
+                            }
+                        }
                     } else {
                         numeros[j][i] = 0
                         colunas[i][j] = 0
                     }
-                    if(contador > 38) {
-                        break
-                    }
                 }
             }
         }
+        if(repeticao > 10000) {
+            for(let j = 0; j < n * n; j++) {
+                for(let i = 0; i < n * n; i++) {
+                    numeros[j][i] = 0
+                }
+            }
+            break
+        }
     }
+
 }
+
+const botaoIniciar = $('#iniciar')
+
+botaoIniciar.bind('click', () => {
+    if($('#jogo-sudoku > *').length > 0) {
+        $('#jogo-sudoku').html('')
+    }
+    
+    var tempoTotal = 0
+    $('#jogo-sudoku').append($(`<div id="timer"></div>`))
+    
+    var timer = setInterval(function() {
+        $('#iniciar').click(function() {
+            tempoTotal = 0
+        })
+
+        // if(gameover == true) {
+        //     clearInterval(timer)
+        // }
+        
+        tempoTotal++
+        if(tempoTotal >= 60) {
+            var minutos = Math.floor(tempoTotal / 60)
+            var segundos = tempoTotal - (60 * minutos)
+            if(segundos < 10) {
+                segundos = '0' + (tempoTotal - (60 * minutos))
+            }
+        } else if(tempoTotal < 60) {
+            var minutos = 0
+            var segundos = tempoTotal
+            if(segundos < 10) {
+                segundos = '0' + tempoTotal
+            }
+        }
+        $('#timer').html('Tempo: ' + minutos + ':' + segundos)
+    }, 1000)
+
+    const dificuldade = $('#dificuldade').val()
+
+    while($('#bloco-l-1-c-1').text().length == 0) {
+        criarJogo()
+        if($('#bloco-l-1-c-1').text().length == 1) {
+            break
+        }
+    }
+    
+    var contadorZeros = 0
+    var qtdNumerosEscondidos = 0
+    
+    if(dificuldade == 'facil') {
+        qtdNumerosEscondidos = 43
+    } else if(dificuldade == 'medio') {
+        qtdNumerosEscondidos = 51
+    } else {
+        qtdNumerosEscondidos = 59
+    }
+    
+    while(contadorZeros < qtdNumerosEscondidos) {
+        var linhaAleatoria = Math.floor(Math.random() * 9) + 1
+        var colunaAleatoria = Math.floor(Math.random() * 9) + 1
+        if($(`#bloco-l-${linhaAleatoria}-c-${colunaAleatoria}`).text() != '') {
+            $(`#bloco-l-${linhaAleatoria}-c-${colunaAleatoria}`).text('')
+            contadorZeros++
+        }
+    }
+})
+
+

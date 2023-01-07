@@ -1,0 +1,95 @@
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#dificuldade-botao {
+    font-family: 'Press Start 2P', cursive;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 3px solid black;
+    padding: 20px;
+    width: 40%;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+select {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    text-align: center;
+    margin: 2px;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    margin: 2px;
+    width: 20%;
+}
+
+#jogo-sudoku {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#timer {
+    font-family: 'Press Start 2P', cursive;
+    margin: 25px;
+}
+
+.linha-1, .linha-2, .linha-3, .linha-4, .linha-5, .linha-6, .linha-7, .linha-8, .linha-9 {
+    display: flex;
+    flex-direction: row;
+}
+
+.bloco {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+#bloco-l-3-c-1, #bloco-l-3-c-2, #bloco-l-3-c-3, #bloco-l-3-c-4, #bloco-l-3-c-5, #bloco-l-3-c-6, #bloco-l-3-c-7, #bloco-l-3-c-8, #bloco-l-3-c-9,
+#bloco-l-6-c-1, #bloco-l-6-c-2, #bloco-l-6-c-3, #bloco-l-6-c-4, #bloco-l-6-c-5, #bloco-l-6-c-6, #bloco-l-6-c-7, #bloco-l-6-c-8, #bloco-l-6-c-9 {
+    border-bottom: 2px solid black;
+}
+
+#bloco-l-1-c-3, #bloco-l-2-c-3, #bloco-l-3-c-3, #bloco-l-4-c-3, #bloco-l-5-c-3, #bloco-l-6-c-3, #bloco-l-7-c-3, #bloco-l-8-c-3, #bloco-l-9-c-3,
+#bloco-l-1-c-6, #bloco-l-2-c-6, #bloco-l-3-c-6, #bloco-l-4-c-6, #bloco-l-5-c-6, #bloco-l-6-c-6, #bloco-l-7-c-6, #bloco-l-8-c-6, #bloco-l-9-c-6 {
+    border-right: 2px solid black;
+}
+
+#bloco-l-4-c-1, #bloco-l-4-c-2, #bloco-l-4-c-3, #bloco-l-4-c-4, #bloco-l-4-c-5, #bloco-l-4-c-6, #bloco-l-4-c-7, #bloco-l-4-c-8, #bloco-l-4-c-9,
+#bloco-l-7-c-1, #bloco-l-7-c-2, #bloco-l-7-c-3, #bloco-l-7-c-4, #bloco-l-7-c-5, #bloco-l-7-c-6, #bloco-l-7-c-7, #bloco-l-7-c-8, #bloco-l-7-c-9 {
+    border-top: 2px solid black;
+}
+
+#bloco-l-1-c-4, #bloco-l-2-c-4, #bloco-l-3-c-4, #bloco-l-4-c-4, #bloco-l-5-c-4, #bloco-l-6-c-4, #bloco-l-7-c-4, #bloco-l-8-c-4, #bloco-l-9-c-4,
+#bloco-l-1-c-7, #bloco-l-2-c-7, #bloco-l-3-c-7, #bloco-l-4-c-7, #bloco-l-5-c-7, #bloco-l-6-c-7, #bloco-l-7-c-7, #bloco-l-8-c-7, #bloco-l-9-c-7 {
+    border-left: 2px solid black;
+}
