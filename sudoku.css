@@ -74,6 +74,20 @@ button {
     border: 1px solid black;
 }
 
+.bloco[inicial='nao'] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border: 1px solid black;
+}
+
 #bloco-l-3-c-1, #bloco-l-3-c-2, #bloco-l-3-c-3, #bloco-l-3-c-4, #bloco-l-3-c-5, #bloco-l-3-c-6, #bloco-l-3-c-7, #bloco-l-3-c-8, #bloco-l-3-c-9,
 #bloco-l-6-c-1, #bloco-l-6-c-2, #bloco-l-6-c-3, #bloco-l-6-c-4, #bloco-l-6-c-5, #bloco-l-6-c-6, #bloco-l-6-c-7, #bloco-l-6-c-8, #bloco-l-6-c-9 {
     border-bottom: 2px solid black;
@@ -93,3 +107,19 @@ button {
 #bloco-l-1-c-7, #bloco-l-2-c-7, #bloco-l-3-c-7, #bloco-l-4-c-7, #bloco-l-5-c-7, #bloco-l-6-c-7, #bloco-l-7-c-7, #bloco-l-8-c-7, #bloco-l-9-c-7 {
     border-left: 2px solid black;
 }
+
+.botoes-valor {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.botoes-valor > div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 35px;
+}
+

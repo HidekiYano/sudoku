@@ -1,3 +1,5 @@
+var gameover = false
+
 function quadrante1(numero) {
     var quadrante = [numero[0][0], numero[0][1], numero[0][2], numero[1][0], numero[1][1], numero[1][2], numero[2][0], numero[2][1], numero[2][2]]
     var repeticao = 0
@@ -425,7 +427,6 @@ function contadorZeros(numeros) {
 }
 
 function criarJogo() {
-
     var n = 3
     var zeros = 81
 
@@ -467,7 +468,7 @@ function criarJogo() {
                             for(let i = 0; i < 9; i++) {
                                 $('#jogo-sudoku').append(`<div class="linha-${i + 1}">`)
                                 for(let j = 0; j < 9; j++) {
-                                    $(`.linha-${i + 1}`).append(`<div class="bloco" id="bloco-l-${i + 1}-c-${j + 1}">`)
+                                    $(`.linha-${i + 1}`).append(`<div class="bloco" id="bloco-l-${i + 1}-c-${j + 1}" onmousedown="clique('bloco-l-${i + 1}-c-${j + 1}')">`)
                                     $(`#bloco-l-${i + 1}-c-${j + 1}`).html(numeros[i][j])
                                     $(`#bloco-l-${i + 1}-c-${j + 1}`).attr('valor', numeros[i][j])
                                     if(numeros[i][j] == 0) {
@@ -492,7 +493,6 @@ function criarJogo() {
             break
         }
     }
-
 }
 
 const botaoIniciar = $('#iniciar')
@@ -509,11 +509,11 @@ botaoIniciar.bind('click', () => {
         $('#iniciar').click(function() {
             tempoTotal = 0
         })
-
-        // if(gameover == true) {
-        //     clearInterval(timer)
-        // }
         
+        if(gameover == true) {
+            clearInterval(timer)
+        }
+
         tempoTotal++
         if(tempoTotal >= 60) {
             var minutos = Math.floor(tempoTotal / 60)
@@ -556,9 +556,81 @@ botaoIniciar.bind('click', () => {
         var colunaAleatoria = Math.floor(Math.random() * 9) + 1
         if($(`#bloco-l-${linhaAleatoria}-c-${colunaAleatoria}`).text() != '') {
             $(`#bloco-l-${linhaAleatoria}-c-${colunaAleatoria}`).text('')
+            $(`#bloco-l-${linhaAleatoria}-c-${colunaAleatoria}`).attr('inicial', 'nao')
             contadorZeros++
         }
     }
+
+    $('#jogo-sudoku').append('<div class="botoes-valor">')
+
+    for(let botaoValor = 1; botaoValor < 10; botaoValor++) {
+        $('.botoes-valor').append(`<div id="botao-valor-${botaoValor}" onmousedown="pegarValor('botao-valor-${botaoValor}')">${botaoValor}</div>`)
+    }
 })
 
+function contadorCorretos() {
+    var qtdCorretos = 0
+    
+    for(let x = 1; x < 10; x++) {
+        for(let y = 1; y < 10; y++) {
+            if($(`#bloco-l-${x}-c-${y}`).text() == $(`#bloco-l-${x}-c-${y}`).attr('valor')) {
+                qtdCorretos++
+            }
+        }
+    }
+    
+    if(qtdCorretos == 81) {
+        alert('Parabéns, você venceu!')
+        gameover = true
+    }
+}
+
+function clique(id) {
+    const elemento = document.getElementById(`${id}`)
+    elemento.addEventListener("contextmenu", e => e.preventDefault())
+
+    if(event.button == 0) {
+        const linha = id.split('-')[2]
+        const coluna = id.split('-')[4]
+        
+        for(let x = 1; x < 10; x++) {
+            for(let y = 1; y < 10; y++) {
+                $(`#bloco-l-${x}-c-${y}`).css('background-color', 'white')
+            }
+        }
+        for(let hor = 1; hor < 10; hor++) {
+            $(`#bloco-l-${linha}-c-${hor}`).css('background-color', 'lightgrey')
+        }
+        for(let ver = 1; ver < 10; ver++) {
+            $(`#bloco-l-${ver}-c-${coluna}`).css('background-color', 'lightgrey')
+        }
+        $(`#bloco-l-${linha}-c-${coluna}`).css('background-color', 'gray')
+    } else if(event.button == 2) {
+        const linha = id.split('-')[2]
+        const coluna = id.split('-')[4]
+
+        if($(`#bloco-l-${linha}-c-${coluna}`).attr('inicial') == 'nao') {
+            $(`#bloco-l-${linha}-c-${coluna}`).html('')
+        }
+    }
+
+} 
+
+function pegarValor(idBotao) {
+    for(let botao = 1; botao < 10; botao++) {
+        $(`#botao-valor-${botao}`).css('background-color', 'white')
+    }
+
+    $(`#${idBotao}`).css('background-color', 'lightgray')
+    const valorBotao = $(`#${idBotao}`).text()
+
+    for(let x = 1; x < 10; x++) {
+        for(let y = 1; y < 10; y++) {
+            if($(`#bloco-l-${x}-c-${y}`).css('background-color') == 'rgb(128, 128, 128)' && $(`#bloco-l-${x}-c-${y}`).attr('inicial') == 'nao') {
+                $(`#bloco-l-${x}-c-${y}`).html(valorBotao)
+            }
+        }
+    }
+    contadorCorretos()
+}
 
