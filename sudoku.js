@@ -498,12 +498,13 @@ function criarJogo() {
 const botaoIniciar = $('#iniciar')
 
 botaoIniciar.bind('click', () => {
+    $('#jogo-sudoku').css('visibility', 'visible')
     if($('#jogo-sudoku > *').length > 0) {
         $('#jogo-sudoku').html('')
     }
     
     var tempoTotal = 0
-    $('#jogo-sudoku').append($(`<div id="timer"></div>`))
+    $('#jogo-sudoku').append($(`<div id="timer">Tempo: 0:00</div>`))
     
     var timer = setInterval(function() {
         $('#iniciar').click(function() {
@@ -544,9 +545,9 @@ botaoIniciar.bind('click', () => {
     var qtdNumerosEscondidos = 0
     
     if(dificuldade == 'facil') {
-        qtdNumerosEscondidos = 43
+        qtdNumerosEscondidos = 36
     } else if(dificuldade == 'medio') {
-        qtdNumerosEscondidos = 51
+        qtdNumerosEscondidos = 45
     } else {
         qtdNumerosEscondidos = 59
     }
@@ -622,6 +623,7 @@ function pegarValor(idBotao) {
     }
 
     $(`#${idBotao}`).css('background-color', 'lightgray')
+    $(`#${idBotao}`).css('font-weight', '600')
     const valorBotao = $(`#${idBotao}`).text()
 
     for(let x = 1; x < 10; x++) {
