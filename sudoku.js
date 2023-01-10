@@ -498,6 +498,8 @@ function criarJogo() {
 const botaoIniciar = $('#iniciar')
 
 botaoIniciar.bind('click', () => {
+    gameover = false
+
     $('#jogo-sudoku').css('visibility', 'visible')
     if($('#jogo-sudoku > *').length > 0) {
         $('#jogo-sudoku').html('')
@@ -584,6 +586,10 @@ function contadorCorretos() {
         alert('Parabéns, você venceu!')
         gameover = true
     }
+
+    if(gameover == true) {
+        $('.botoes-valor').children().attr('onmousedown', null)
+    }
 }
 
 function clique(id) {
@@ -620,10 +626,11 @@ function clique(id) {
 function pegarValor(idBotao) {
     for(let botao = 1; botao < 10; botao++) {
         $(`#botao-valor-${botao}`).css('background-color', 'white')
+        $(`#botao-valor-${botao}`).css('font-weight', '500')
     }
 
     $(`#${idBotao}`).css('background-color', 'lightgray')
-    $(`#${idBotao}`).css('font-weight', '600')
+    $(`#${idBotao}`).css('font-weight', '800')
     const valorBotao = $(`#${idBotao}`).text()
 
     for(let x = 1; x < 10; x++) {

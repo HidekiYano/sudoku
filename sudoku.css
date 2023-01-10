@@ -1,19 +1,23 @@
 body {
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(106, 147, 182) 0%, rgb(155, 147, 215) 90%);
+    background-image: radial-gradient(circle farthest-corner at 10% 20%,  rgb(85, 94, 102) 0%, rgb(114, 111, 136) 0%);
     font-family: 'Press Start 2P', cursive;
     height: 800px;
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px 3px rgb(197, 197, 197);
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
 }
 
+/* área inicial onde a dificuldade é definida */
+
 #dificuldade-botao {
     font-family: 'Press Start 2P', cursive;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(200, 200, 200) 0%, rgb(174, 174, 174) 90%);
+    text-shadow: 1px 1px 3px rgb(101, 101, 101);
+    background-image: radial-gradient(circle farthest-corner at 10% 20%,  rgb(110, 110, 110) 0%, rgb(174, 174, 174) 90%);
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
@@ -26,9 +30,16 @@ h1 {
     flex-direction: row;
 }
 
+/* espaço do jogo */
+
 #jogo-sudoku {
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(200, 200, 200) 0%, rgb(174, 174, 174) 90%);
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%,  rgb(110, 110, 110) 0%, rgb(174, 174, 174) 90%);
     width: 600px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -61,16 +72,11 @@ button {
     width: 20%;
 }
 
-#jogo-sudoku {
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
+/* timer do jogo */
 
 #timer {
     font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px 3px rgb(101, 101, 101);
     margin: 25px;
 }
 
@@ -79,10 +85,12 @@ button {
     flex-direction: row;
 }
 
+/* blocos que não são modificáveis (gerados no jogo inicial) */
+
 .bloco {
     background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -94,8 +102,11 @@ button {
     border: 1px solid black;
 }
 
+/* blocos que são modificáveis (não gerados no jogo inicial) */
+
 .bloco[inicial='nao'] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
     color: rgb(105, 100, 100);
     display: flex;
     flex-direction: row;
@@ -107,6 +118,8 @@ button {
     padding: 2px;
     border: 1px solid black;
 }
+
+/* bordas do espaço do jogo */
 
 #bloco-l-3-c-1, #bloco-l-3-c-2, #bloco-l-3-c-3, #bloco-l-3-c-4, #bloco-l-3-c-5, #bloco-l-3-c-6, #bloco-l-3-c-7, #bloco-l-3-c-8, #bloco-l-3-c-9,
 #bloco-l-6-c-1, #bloco-l-6-c-2, #bloco-l-6-c-3, #bloco-l-6-c-4, #bloco-l-6-c-5, #bloco-l-6-c-6, #bloco-l-6-c-7, #bloco-l-6-c-8, #bloco-l-6-c-9 {
@@ -144,6 +157,8 @@ button {
     border-bottom: 4px solid black;
 }
 
+/* botões que inserem os números nos espaços vazios */
+
 .botoes-valor {
     background-color: white;
     display: flex;
@@ -153,6 +168,7 @@ button {
 
 .botoes-valor > div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
     width: 35px;
     height: 35px;
     border: 1px solid black;
